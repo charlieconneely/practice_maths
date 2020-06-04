@@ -44,8 +44,15 @@ def main(level):
     return final_choice
 
 def menu():
-    menu_choice = input("\nWould you like to \na.) Add\nb.) " + \
-            "Subtract\nc.) Multiply\n")
+    while True:
+        menu_choice = input("\nWould you like to \na.) Add\nb.) " + \
+                "Subtract\nc.) Multiply\n")
+        if (menu_choice == 'a'
+            or menu_choice == 'b'
+            or menu_choice == 'c'):
+            break
+        else:
+            print("Invalid input. Please try again.\n")
     return menu_choice
 
 def add(n1, n2):
@@ -62,8 +69,14 @@ def subtract(n1, n2):
 
 if __name__ == "__main__":
     while True:
-        level = int(input("\nSelect your difficulty level:\n" + \
-                "1.) Easy\n2.) Medium\n3.) Hard\n4.) Extreme\n"))
+        while True:
+            level = int(input("\nSelect your difficulty level:\n" + \
+                    "1.) Easy\n2.) Medium\n3.) Hard\n4.) Extreme\n"))
+            if (level == 1 or level == 2 or level == 3
+                or level == 4):
+                break
+            else:
+                print("Invalid input. Please try again.\n")
         while True:
             choice = main(level)
             if choice == 2 or choice == 3:
